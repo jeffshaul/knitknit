@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Knitknit</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>knit knit</h1>
+
+        
+        <div id="instructions">
+            <p class="hideable">This is just a simple tool to help keep track of stitches and repeats.</p>
+            <ul class="hideable">
+                <li>Enter your pattern in the box below, one row per line</li>
+                <li>Use commas to separate groups of stitches</li>
+                <li>Surround stitch repeats with parentheses</li>
+                <li>Hint: hit the spacebar or click/tap the pattern to advance through stitch groups easily!</li>
+            </ul>
+            <textarea id="pattern-input" name="pattern-input" rows=12 class="hideable">Row 1: k3, p2, c4f, p4, (c4b, p4)3, c4b, p2, k3&#013;Row 2: k5, (p4, k4)4, p4, k5&#013;Row 3: k3, p2, k4, p3, t3b, (t4f, t4b)2, t3f, p3, k4, p2, k3</textarea>
+            <br class="hideable">
+            <button id="button" onclick="processPattern()">Start knitting!</button>
+        </div>
+        <br>
+        <div id="pattern-display" class="hidden">
+            <div id="controls">
+                <button onclick="decrementStitchGroup()">◀</button>
+                <button onclick="incrementStitchGroup()">▶</button>
+            </div>
+            <!-- dummy span -->
+            <span id="0"></span>
+            <ol id="pattern-rows">
+            </ol>
+            
+            <p>Pattern Repeats: <span id="pattern-repeats">0</span></p>
+        </div>
+        
+        <script src="knit.js"></script>
+    </body>
+</html>
